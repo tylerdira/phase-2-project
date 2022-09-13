@@ -3,7 +3,7 @@ import { useState } from "react";
 import SearchBar from "./SearchBar";
 import PostList from "./PostList";
 
-function MainContent({ postList, handleUpdateLike }) {
+function MainContent({ postList, handleUpdateLike, handleNewComment }) {
     const [searchString, setSearchString] = useState("");
 
     const filterdList = postList.filter(post => post.caption.toLowerCase().includes(searchString.toLowerCase()) || post.date.includes(searchString));
@@ -11,7 +11,7 @@ function MainContent({ postList, handleUpdateLike }) {
     return (
         <div>
             <SearchBar search={searchString} onSearchChange={setSearchString} />
-            <PostList posts={filterdList} handleUpdateLike={handleUpdateLike} />
+            <PostList posts={filterdList} handleNewComment={handleNewComment} handleUpdateLike={handleUpdateLike} />
         </div>
     )
 }

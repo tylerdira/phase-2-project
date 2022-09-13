@@ -1,7 +1,8 @@
 import React from "react";
 import './Post.css';
+import Comments from "./Comments";
 
-function Posts({ post, handleUpdateLike }) {
+function Posts({ post, handleUpdateLike, handleNewComment }) {
 
     const { id, image, likes, caption, date, comments } = post
 
@@ -22,6 +23,8 @@ function Posts({ post, handleUpdateLike }) {
             .then(handleUpdateLike)
     }
 
+    
+
     return (
         <div className="post">
 
@@ -31,7 +34,7 @@ function Posts({ post, handleUpdateLike }) {
             <button onClick={increaseLikes}> ♡ </button>
             <p>{caption}</p>
             <p>Posted: {date}</p>
-            <p>Comments: {comments} </p>
+            <p>Comments: </p>
             <form>
                 <input placeholder="Add a new comment"></input>
                 <input type='submit' value='Add Comment'></input>

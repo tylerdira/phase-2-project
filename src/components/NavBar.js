@@ -7,6 +7,7 @@ function NavBar() {
         <div className="nav-bar">
             <Link to='/'>Home</Link>
             <Link to="/AddPostForm">New Post</Link>
+            <Link to='/MostLiked'>Top 5 Liked Posts</Link>
         </div>
     )
 }

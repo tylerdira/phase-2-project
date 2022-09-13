@@ -1,6 +1,5 @@
 //todo 
 // add 3rd route to link to a most liked post page
-// search button functionality on home page
 // adding a new comment (probably going to work with a patch similar to like button)
 // implement css to make site look good
 
@@ -12,6 +11,7 @@ import AddPostForm from './AddPostForm';
 import MainContent from './MainContent';
 import Profile from './Profile';
 import Header from './Header';
+import MostLiked from './MostLiked';
 
 
 function App() {
@@ -36,16 +36,28 @@ function App() {
     setPostList(updateLike);
   }
 
+  function handleNewComment(updatedComment) {
+    const updateComment = postList.map((post) => 
+    post.id === updatedComment.id ? updatedComment : post);
+    setPostList(updateComment)
+  }
+
+
+  const mostPopularPost = [...postList].sort((a, b) => {
+    return (b.likes - a.likes)
+  }).slice(0, 5)
+
 
   return (
     <div>
       <Header />
       <Profile />
       <Routes>
-        <Route path='/' element={<MainContent postList={postList} handleUpdateLike={handleUpdateLike} />}>
+        <Route path='/' element={<MainContent postList={postList} handleNewComment={handleNewComment} handleUpdateLike={handleUpdateLike} />}>
         </Route>
         <Route path='/AddPostForm' element={<AddPostForm newPost={newPost} />}>
         </Route>
+        <Route path='/MostLiked' element={<MostLiked setPostList={setPostList} mostPopularPost={mostPopularPost} postList={postList}/>}></Route>
       </Routes>
     </div>
   );
