@@ -1,12 +1,17 @@
 import React from "react";
-import Posts from "./Posts";
+import { useState } from "react";
 import SearchBar from "./SearchBar";
+import PostList from "./PostList";
 
-function MainContent({postList, handleUpdateLike}) {
-    return(
+function MainContent({ postList, handleUpdateLike }) {
+    const [searchString, setSearchString] = useState("");
+
+    const filterdList = postList.filter(post => post.caption.toLowerCase().includes(searchString.toLowerCase()) || post.date.includes(searchString));
+
+    return (
         <div>
-            <SearchBar />
-            {postList.map(post => <Posts key={post.id} post={post} handleUpdateLike={handleUpdateLike} />)}
+            <SearchBar search={searchString} onSearchChange={setSearchString} />
+            <PostList posts={filterdList} handleUpdateLike={handleUpdateLike} />
         </div>
     )
 }

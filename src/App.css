@@ -32,16 +32,8 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
-}
-
-.post {
-  text-align: center;
-  padding: 20px;
-	max-width: 650px;
-	text-align: center;
-  border: #282c34;
-  border-style: solid;
 }

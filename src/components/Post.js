@@ -1,31 +1,32 @@
 import React from "react";
+import './Post.css';
 
-function Posts({post, handleUpdateLike}) {
+function Posts({ post, handleUpdateLike }) {
 
-    const{id, image, likes, caption, date, comments} = post
+    const { id, image, likes, caption, date, comments } = post
 
-    
 
-   function increaseLikes() {
+
+    function increaseLikes() {
         const updatedLikeObj = {
-            likes:post.likes + 1,
+            likes: post.likes + 1,
         };
         fetch(`http://localhost:3000/posts/${id}`, {
             method: 'PATCH',
             headers: {
-                "Content-Type" : "application/json",
+                "Content-Type": "application/json",
             },
             body: JSON.stringify(updatedLikeObj),
         })
-        .then(r => r.json())
-        .then(handleUpdateLike)
+            .then(r => r.json())
+            .then(handleUpdateLike)
     }
 
-    return(
+    return (
         <div className="post">
-            
+
             <img src={image}></img>
-            <br/>
+            <br />
             <p>Likes: {likes}</p>
             <button onClick={increaseLikes}> ♡ </button>
             <p>{caption}</p>
@@ -33,7 +34,7 @@ function Posts({post, handleUpdateLike}) {
             <p>Comments: {comments} </p>
             <form>
                 <input placeholder="Add a new comment"></input>
-                <input type='submit'value='Add Comment'></input>
+                <input type='submit' value='Add Comment'></input>
             </form>
         </div>
     )

@@ -1,0 +1,23 @@
+.search-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    margin: 1rem 0;
+    background-color: #daecdc;
+}
+
+.search-bar-input {
+    padding: 0.25rem;
+    border: none;
+    font-family: inherit;
+    font-size: 1.2em;
+    border-bottom: 2px solid rgb(221, 215, 215);
+    transition: all 0.2s;
+    width: 100%;
+}
+
+.search-bar-input:focus {
+    outline: none;
+    border-bottom: 2px solid rgb(145, 52, 52);
+}
