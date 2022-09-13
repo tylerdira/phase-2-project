@@ -1,35 +1,46 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
+import './AddPostForm.css';
 
-function AddPostForm({newPost}) {
+function AddPostForm({ newPost }) {
 
     const [image, setImage] = useState('')
     const [caption, setCaption] = useState('')
 
-    
-    return(
+
+    const formHandler = (e) => {
+        e.preventDefault();
+        fetch('http://localhost:3000/posts', {
+            method: 'POST',
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                image, caption, date: new Date().toLocaleDateString()
+            }),
+        })
+            .then(r => r.json())
+            .then(aNewPost => {
+                newPost(aNewPost);
+                setImage('');
+                setCaption('');
+            })
+    }
+    return (
 
         <div>
-            <form onSubmit={e => {
-                e.preventDefault();
-                fetch('http://localhost:3000/posts', {
-                    method: 'POST',
-                    headers: {"Content-Type": "application/json"},
-                    body: JSON.stringify({
-                        image, caption,
-                    }),
-                })
-                .then(r => r.json())
-                .then(aNewPost => {
-                    newPost(aNewPost);
-                    setImage('');
-                    setCaption('');
-                })
-            }}>
-                <input placeholder="Image URL" onChange={e => setImage(e.target.value)} value={image}></input>
-                <br/>
-                <input placeholder="Caption" onChange={e => setCaption(e.target.value)} value={caption}></input>
-                <br/>
-                <input type='submit' value="Post"></input>
+            <form onSubmit={formHandler}>
+                <div className="new-post__controls">
+                    <div className="new-post__control">
+                        <label>Image URL</label>
+                        <input placeholder="Image URL" onChange={e => setImage(e.target.value)} value={image}></input>
+                    </div>
+                    <div className="new-post__control">
+                        <label>Caption</label>
+                        <input placeholder="Caption" onChange={e => setCaption(e.target.value)} value={caption}></input>
+                    </div>
+                </div>
+
+                <div className='new-post__actions'>
+                    <button type='submit'>Submit Post</button>
+                </div>
             </form>
         </div>
     )

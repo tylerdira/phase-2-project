@@ -1,9 +1,16 @@
 import React from "react";
+import './SearchBar.css';
 
-function SearchBar() {
-    return(
-        <div>
-            <input placeholder="Search by caption or date"></input>
+function SearchBar({ search, onSearchChange }) {
+    return (
+        <div className="search-bar">
+            <input className="search-bar-input"
+                value={search}
+                type="text"
+                id="search"
+                placeholder="Search by caption or date"
+                onChange={(e) => onSearchChange(e.target.value)}
+            />
         </div>
     )
 }

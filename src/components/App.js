@@ -5,8 +5,8 @@
 // implement css to make site look good
 
 
-import React, {useState, useEffect} from 'react';
-import {Route, Routes} from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Route, Routes } from 'react-router-dom';
 import '../App.css';
 import AddPostForm from './AddPostForm';
 import MainContent from './MainContent';
@@ -16,12 +16,12 @@ import Header from './Header';
 
 function App() {
 
-  const[postList, setPostList] = useState([])
+  const [postList, setPostList] = useState([])
 
   useEffect(() => {
     fetch('http://localhost:3000/posts')
-    .then(r => r.json())
-    .then(data => setPostList(data))
+      .then(r => r.json())
+      .then(data => setPostList(data))
   }, []
   )
 
@@ -31,7 +31,7 @@ function App() {
 
   function handleUpdateLike(updatedLike) {
     const updateLike = postList.map((post) =>
-    post.id === updatedLike.id ? updatedLike : post
+      post.id === updatedLike.id ? updatedLike : post
     );
     setPostList(updateLike);
   }
@@ -42,7 +42,7 @@ function App() {
       <Header />
       <Profile />
       <Routes>
-        <Route path='/MainContent' element={<MainContent postList={postList} handleUpdateLike={handleUpdateLike}/>}>
+        <Route path='/' element={<MainContent postList={postList} handleUpdateLike={handleUpdateLike} />}>
         </Route>
         <Route path='/AddPostForm' element={<AddPostForm newPost={newPost} />}>
         </Route>

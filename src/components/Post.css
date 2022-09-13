@@ -1,0 +1,8 @@
+.post {
+    text-align: flex;
+    padding: 20px;
+    max-width: 600px;
+    text-align: center;
+    border: #282c34;
+    border-style: solid;
+}
