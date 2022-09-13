@@ -1,15 +1,27 @@
-import React, {useState, useEffect} from "react";
+import React, { useState } from "react";
+import './Comments.css';
 
-function Comments({comments}) {
+function Comments({ updateComment }) {
 
-    const [backendComments, setBackendComments] = useState([])
+    const [comment, setComment] = useState('')
 
-    useEffect(() => {
-
-    }, [])
+    const formHandler = (e) => {
+        e.preventDefault();
+        updateComment(comment);
+        setComment('');
+    }
 
     return (
-        <div>{comments}</div>
+        <div>
+            <form onSubmit={formHandler}>
+                <div className="new-comment__controls">
+                    <div className="new-comment__control">
+                        <input placeholder="Add a new comment" onChange={e => setComment(e.target.value)} value={comment}></input>
+                        <button type='submit'>Add Comment</button>
+                    </div>
+                </div>
+            </form>
+        </div>
     )
 }
 
