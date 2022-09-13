@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import './Post.css';
 import Comments from "./Comments";
+import DisplayComments from "./DisplayComments";
 
 function Posts({ post, handleUpdateLike, handleNewComment }) {
 
+    const [toggle, setToggle] = useState(false);
     const { id, image, likes, caption, date, comments } = post
 
 
@@ -23,7 +25,26 @@ function Posts({ post, handleUpdateLike, handleNewComment }) {
             .then(handleUpdateLike)
     }
 
-    
+    function updateComment(comment) {
+        const updatedCommentsObj = {
+            comments: [...comments, comment],
+        };
+        fetch(`http://localhost:3000/posts/${id}`, {
+            method: 'PATCH',
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(updatedCommentsObj),
+        })
+            .then(r => r.json())
+            .then(handleNewComment)
+    }
+
+    const handleToggle = () => {
+        setToggle(!toggle)
+    }
+
+    const toBeDisplayedComments = comments.map(comment => <DisplayComments key={Math.random()} comment={comment} />)
 
     return (
         <div className="post">
@@ -34,11 +55,20 @@ function Posts({ post, handleUpdateLike, handleNewComment }) {
             <button onClick={increaseLikes}> ♡ </button>
             <p>{caption}</p>
             <p>Posted: {date}</p>
-            <p>Comments: </p>
-            <form>
-                <input placeholder="Add a new comment"></input>
-                <input type='submit' value='Add Comment'></input>
-            </form>
+            <div>
+                {
+                    toggle ?
+                        <div>
+                            <p>Comments: <button onClick={handleToggle}>Minimize</button></p>
+                            {toBeDisplayedComments}
+                            <Comments updateComment={updateComment} />
+                        </div>
+                        :
+                        <div>
+                            <p>Comments: <button onClick={handleToggle}>View</button></p>
+                        </div>
+                }
+            </div>
         </div>
     )
 }
