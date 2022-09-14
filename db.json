@@ -1,4 +1,5 @@
 {
+  "users": [],
   "posts": [
     {
       "id": 1,
@@ -7,7 +8,8 @@
       "date": "9/12/2022",
       "comments": [
         "Beautiful",
-        "Nice"
+        "Nice",
+        "Cool!"
       ],
       "likes": 38
     },

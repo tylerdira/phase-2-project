@@ -5,4 +5,17 @@
     padding: 0.5rem;
     margin: 1rem 0;
     background-color: #f4f3ed;
+    
+}
+
+.home-link:hover {
+    background-color: antiquewhite;
+}
+
+.new-post-link:hover {
+    background-color: antiquewhite;
+}
+
+.most-liked-link:hover {
+    background-color: rgb(51, 141, 134);
 }

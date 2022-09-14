@@ -1,6 +1,4 @@
 //todo 
-// add 3rd route to link to a most liked post page
-// adding a new comment (probably going to work with a patch similar to like button)
 // implement css to make site look good
 
 
@@ -12,10 +10,11 @@ import MainContent from './MainContent';
 import Profile from './Profile';
 import Header from './Header';
 import MostLiked from './MostLiked';
+import Login from './Login'
 
 
 function App() {
-
+  const [user, setUser] = useState(null)
   const [postList, setPostList] = useState([])
 
   useEffect(() => {
@@ -24,6 +23,12 @@ function App() {
       .then(data => setPostList(data))
   }, []
   )
+
+  function handleLogin(user) {
+    setUser(user)
+  }
+
+  // if (!user) return <Login handleLogin={handleLogin}/>
 
   const newPost = (newPost) => {
     setPostList(postList => [...postList, newPost])
@@ -49,7 +54,7 @@ function App() {
 
 
   return (
-    <div>
+    <div className='entire-page'>
       <Header />
       <Profile />
       <Routes>

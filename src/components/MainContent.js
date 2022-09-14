@@ -9,7 +9,7 @@ function MainContent({ postList, handleUpdateLike, handleNewComment }) {
     const filterdList = postList.filter(post => post.caption.toLowerCase().includes(searchString.toLowerCase()) || post.date.includes(searchString));
 
     return (
-        <div>
+        <div className="main-content">
             <SearchBar search={searchString} onSearchChange={setSearchString} />
             <PostList posts={filterdList} handleNewComment={handleNewComment} handleUpdateLike={handleUpdateLike} />
         </div>
