@@ -26,7 +26,8 @@ function AddPostForm({ newPost }) {
     return (
 
         <div>
-            <form onSubmit={formHandler}>
+            <p className="new-post-title">New Post Form</p>
+            <form  className="new-post-div" onSubmit={formHandler}>
                 <div className="new-post__controls">
                     <div className="new-post__control">
                         <label>Image URL</label>
@@ -39,7 +40,7 @@ function AddPostForm({ newPost }) {
                 </div>
 
                 <div className='new-post__actions'>
-                    <button type='submit'>Submit Post</button>
+                    <button className='glow-on-hover'type='submit'>Submit Post</button>
                 </div>
             </form>
         </div>

@@ -1,5 +1,17 @@
 {
-  "users": [],
+  "users": [
+    {
+      "email": "tyler@mail.com",
+      "password": "$2a$10$.rfru0tB55avb4QayMw43u32jMyhIEZc..lERAegnWVoquVLFgKMm",
+      "id": 1
+    },
+    {
+      "email": "leela@mail.com",
+      "password": "$2a$10$V3RLnxedgQO4ok7HwTPBWuJezqm7jXCwaTSawNRAAoYkRgpeYuUfm",
+      "id": 2
+    }
+    
+  ],
   "posts": [
     {
       "id": 1,
@@ -11,7 +23,7 @@
         "Nice",
         "Cool!"
       ],
-      "likes": 38
+      "likes": 45
     },
     {
       "id": 2,

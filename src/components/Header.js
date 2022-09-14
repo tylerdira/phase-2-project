@@ -2,10 +2,10 @@ import React from "react";
 import NavBar from "./NavBar";
 import SearchBar from "./SearchBar";
 
-function Header() {
+function Header({setUser}) {
     return(
         <div>
-            <NavBar />
+            <NavBar setUser={setUser} />
         </div>
     )
 }

@@ -1,12 +1,12 @@
 import React, {useState} from "react";
+import Signup from "./Signup";
 
-
-function Login({handleLogin}) {
+function Login({handleLogin, setSignUpForm, signUpForm}) {
 
     const [formData, setFormData] = useState({
         email: '',
         password: ''
-    })
+    });
 
     function handleChange(e) {
         setFormData({
@@ -20,34 +20,47 @@ function Login({handleLogin}) {
         const config ={
             method: 'POST',
             headers: {
-                "Content-type" : "application/json"
+                "Content-Type" : "application/json"
             },
             body: JSON.stringify(formData)
         }
-        fetch('http://localhost:3001/login')
+        fetch('http://localhost:3000/login', config)
         .then(r => r.json())
         .then(data => {
             handleLogin(data.user)
+        
         })
     }
 
+    function handleClick() {
+        setSignUpForm(!signUpForm)
+    }
     return(
         <div>
-            <form onSubmit={handleSubmit}>
-                <input
-                type='text'
-                placeholder="Email"
-                value={formData.email}
-                name='email'
-                onChange={handleChange}></input>
-                <input
-                type='password'
-                placeholder="Password"
-                value={formData.password}
-                name='password'
-                onChange={handleChange}></input>
-                <input type='submit' value='Login'></input>
-            </form>
+            <div className='login-form'>
+                <form onSubmit={handleSubmit}>
+                    <input
+                    type='text'
+                    placeholder="Email"
+                    value={formData.email}
+                    name='email'
+                    onChange={handleChange}></input>
+                    <input
+                    type='text'
+                    placeholder="Password"
+                    value={formData.password}
+                    name='password'
+                    onChange={handleChange}></input>
+                    <input type='submit' value='Login'></input>
+                </form>
+            </div>
+            <div className='sign-up-form'>
+                <button onClick={handleClick}>Show/Hide Sign Up Form</button>
+                {signUpForm ? <Signup /> : null}
+                
+                
+            </div>
+            
         </div>
     )
 }

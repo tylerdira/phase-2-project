@@ -1,5 +1,7 @@
 //todo 
 // implement css to make site look good
+//signup button on login page
+//logout button on main page
 
 
 import React, { useState, useEffect } from 'react';
@@ -16,6 +18,7 @@ import Login from './Login'
 function App() {
   const [user, setUser] = useState(null)
   const [postList, setPostList] = useState([])
+  const [signUpForm, setSignUpForm] = useState(false)
 
   useEffect(() => {
     fetch('http://localhost:3000/posts')
@@ -28,7 +31,9 @@ function App() {
     setUser(user)
   }
 
-  // if (!user) return <Login handleLogin={handleLogin}/>
+  
+
+  if (!user) return <Login signUpForm={signUpForm} setSignUpForm={setSignUpForm} handleLogin={handleLogin}/>
 
   const newPost = (newPost) => {
     setPostList(postList => [...postList, newPost])
@@ -55,7 +60,7 @@ function App() {
 
   return (
     <div className='entire-page'>
-      <Header />
+      <Header setUser={setUser}/>
       <Profile />
       <Routes>
         <Route path='/' element={<MainContent postList={postList} handleNewComment={handleNewComment} handleUpdateLike={handleUpdateLike} />}>
