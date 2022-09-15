@@ -9,11 +9,11 @@ function AddPostForm({ newPost }) {
 
     const formHandler = (e) => {
         e.preventDefault();
-        fetch('http://localhost:3000/posts', {
+        fetch('http://localhost:3005/posts', {
             method: 'POST',
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
-                image, caption, date: new Date().toLocaleDateString()
+                image, caption, date: new Date().toLocaleDateString(), comments: []
             }),
         })
             .then(r => r.json())
@@ -27,7 +27,7 @@ function AddPostForm({ newPost }) {
 
         <div>
             <p className="new-post-title">New Post Form</p>
-            <form  className="new-post-div" onSubmit={formHandler}>
+            <form className="new-post-div" onSubmit={formHandler}>
                 <div className="new-post__controls">
                     <div className="new-post__control">
                         <label>Image URL</label>
@@ -40,7 +40,7 @@ function AddPostForm({ newPost }) {
                 </div>
 
                 <div className='new-post__actions'>
-                    <button className='glow-on-hover'type='submit'>Submit Post</button>
+                    <button className='glow-on-hover' type='submit'>Submit Post</button>
                 </div>
             </form>
         </div>

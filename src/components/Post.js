@@ -14,7 +14,7 @@ function Posts({ post, handleUpdateLike, handleNewComment }) {
         const updatedLikeObj = {
             likes: post.likes + 1,
         };
-        fetch(`http://localhost:3000/posts/${id}`, {
+        fetch(`http://localhost:3005/posts/${id}`, {
             method: 'PATCH',
             headers: {
                 "Content-Type": "application/json",
@@ -29,7 +29,7 @@ function Posts({ post, handleUpdateLike, handleNewComment }) {
         const updatedCommentsObj = {
             comments: [...comments, comment],
         };
-        fetch(`http://localhost:3000/posts/${id}`, {
+        fetch(`http://localhost:3005/posts/${id}`, {
             method: 'PATCH',
             headers: {
                 "Content-Type": "application/json",
@@ -52,7 +52,7 @@ function Posts({ post, handleUpdateLike, handleNewComment }) {
             <img src={image}></img>
             <br />
             <p>Likes: {likes}</p>
-            <button onClick={increaseLikes}> ♡ </button>
+            <button className="button button3" onClick={increaseLikes}> ♡ </button>
             <p>{caption}</p>
             <p>Posted: {date}</p>
             <div>

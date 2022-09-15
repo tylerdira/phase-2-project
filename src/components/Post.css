@@ -6,5 +6,24 @@
     border: #282c34;
     border-style: solid;
     margin: auto;
+    background-color: antiquewhite;
 }
 
+.button {
+
+
+    color: rgb(181, 47, 47);
+    padding: 0px 2px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.button3:hover {
+    background-color: #f44336;
+    color: rgb(0, 107, 128);
+}
