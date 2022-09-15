@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import './Signup.css'
 
 function Signup() {
 
@@ -42,6 +43,7 @@ function Signup() {
         <div>
             <form onSubmit={handleSubmit}>
                     <input
+                    className="email"
                     type='text'
                     name='email'
                     value={signUpFormData.email}
@@ -49,13 +51,14 @@ function Signup() {
                     onChange={handleChange}>
                     </input>
                     <input
+                    className="password"
                     type='text'
                     name='password'
                     value={signUpFormData.password}
                     placeholder='password'
                     onChange={handleChange}>
                     </input>
-                    <input type='submit' value='Sign Up!'></input>
+                    <input className='signup' type='submit' value='Sign Up!'></input>
                 </form>
         </div>
     )

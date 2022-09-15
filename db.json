@@ -9,8 +9,17 @@
       "email": "leela@mail.com",
       "password": "$2a$10$V3RLnxedgQO4ok7HwTPBWuJezqm7jXCwaTSawNRAAoYkRgpeYuUfm",
       "id": 2
+    },
+    {
+      "email": "lantz@mail.com",
+      "password": "$2a$10$BWECI4X9Rj3.Y.YzWqiM7uVPXOooG.x3RHuaYEN1UHVkfo1hHb3Bq",
+      "id": 3
+    },
+    {
+      "email": "eric@mail.com",
+      "password": "$2a$10$lWQNyDg8Z5Ad8u.3ye.mP.drHo1.LtBJ/on2t6WsPvGXUQsQFKV2G",
+      "id": 4
     }
-    
   ],
   "posts": [
     {
@@ -21,7 +30,8 @@
       "comments": [
         "Beautiful",
         "Nice",
-        "Cool!"
+        "Cool!",
+        "super"
       ],
       "likes": 45
     },

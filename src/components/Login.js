@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import Signup from "./Signup";
+import './Login.css'
 
 function Login({handleLogin, setSignUpForm, signUpForm}) {
 
@@ -36,31 +37,39 @@ function Login({handleLogin, setSignUpForm, signUpForm}) {
         setSignUpForm(!signUpForm)
     }
     return(
-        <div>
-            <div className='login-form'>
-                <form onSubmit={handleSubmit}>
-                    <input
-                    type='text'
-                    placeholder="Email"
-                    value={formData.email}
-                    name='email'
-                    onChange={handleChange}></input>
-                    <input
-                    type='text'
-                    placeholder="Password"
-                    value={formData.password}
-                    name='password'
-                    onChange={handleChange}></input>
-                    <input type='submit' value='Login'></input>
-                </form>
-            </div>
-            <div className='sign-up-form'>
-                <button onClick={handleClick}>Show/Hide Sign Up Form</button>
-                {signUpForm ? <Signup /> : null}
+        <div className="background-image">
+            <div className='main'>
+                <p className="login">Login</p>
+                <div className='login-form'>
+                    <form onSubmit={handleSubmit}>
+                        <input
+                        className="email"
+                        type='text'
+                        placeholder="Email"
+                        value={formData.email}
+                        name='email'
+                        onChange={handleChange}></input>
+                        <input
+                        className="password"
+                        type='text'
+                        placeholder="Password"
+                        value={formData.password}
+                        name='password'
+                        onChange={handleChange}></input>
+                        <input className='submit' type='submit' value='Login'></input>
+                    </form>
+                </div>
+                <div className='sign-up-form'>
+                    <br/>
+                    <button className='show-hide-sign-up-button' onClick={handleClick}>Show/Hide Sign Up Form</button>
+                    <br/>
+                    <br/>
+                    {signUpForm ? <Signup /> : null}
+                    
+                    
+                </div>
                 
-                
             </div>
-            
         </div>
     )
 }
