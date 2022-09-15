@@ -11,9 +11,14 @@
       "id": 2
     },
     {
-      "email": "leela2@gmail.com",
-      "password": "$2a$10$/RxBi.T52hoi2gnDkBG50uBRANZ43rU4qsPCBIE8XUYMxIEpn99cG",
+      "email": "lantz@mail.com",
+      "password": "$2a$10$BWECI4X9Rj3.Y.YzWqiM7uVPXOooG.x3RHuaYEN1UHVkfo1hHb3Bq",
       "id": 3
+    },
+    {
+      "email": "eric@mail.com",
+      "password": "$2a$10$lWQNyDg8Z5Ad8u.3ye.mP.drHo1.LtBJ/on2t6WsPvGXUQsQFKV2G",
+      "id": 4
     }
   ],
   "posts": [
@@ -24,7 +29,9 @@
       "date": "9/12/2022",
       "comments": [
         "Beautiful",
-        "Nice"
+        "Nice",
+        "Cool!",
+        "super"
       ],
       "likes": 58
     },
