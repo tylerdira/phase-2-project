@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 
 function Signup() {
 
@@ -21,42 +21,42 @@ function Signup() {
 
     function handleSubmit(e) {
         e.preventDefault();
-        const config ={
+        const config = {
             method: 'POST',
             headers: {
-                'Content-Type' : 'application/json'
+                'Content-Type': 'application/json'
             },
             body: JSON.stringify(signUpFormData)
         }
-        fetch('http://localhost:3000/signup', config)
-        .then(r => r.json())
-        .then(data => {
-            handleSignUp(data.user)
-            
-        })
+        fetch('http://localhost:3005/signup', config)
+            .then(r => r.json())
+            .then(data => {
+                handleSignUp(data.user)
+
+            })
         window.location.reload();
     }
 
 
-    return(
+    return (
         <div>
             <form onSubmit={handleSubmit}>
-                    <input
+                <input
                     type='text'
                     name='email'
                     value={signUpFormData.email}
                     placeholder='email'
                     onChange={handleChange}>
-                    </input>
-                    <input
+                </input>
+                <input
                     type='text'
                     name='password'
                     value={signUpFormData.password}
                     placeholder='password'
                     onChange={handleChange}>
-                    </input>
-                    <input type='submit' value='Sign Up!'></input>
-                </form>
+                </input>
+                <input type='submit' value='Sign Up!'></input>
+            </form>
         </div>
     )
 }

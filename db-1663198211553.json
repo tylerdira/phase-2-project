@@ -12,7 +12,7 @@
     },
     {
       "email": "leela2@gmail.com",
-      "password": "$2a$10$/RxBi.T52hoi2gnDkBG50uBRANZ43rU4qsPCBIE8XUYMxIEpn99cG",
+      "password": "$2a$10$VynKl61e0VwSMKxGqnwRyuiDrmDXKxNDDC7OTlzEqr.Ebwh.sgrKi",
       "id": 3
     }
   ],
@@ -27,7 +27,7 @@
         "Nice",
         "Cool!"
       ],
-      "likes": 45
+      "likes": 46
     },
     {
       "id": 2,
@@ -59,7 +59,7 @@
       "caption": "Took this pic of the ocean and some rocks, maybe I'll find treasures!",
       "date": "9/12/2022",
       "comments": [],
-      "likes": 4
+      "likes": 5
     },
     {
       "id": 6,
@@ -67,7 +67,7 @@
       "caption": "Leave a like on this post to be as happy as my puppy.",
       "date": "9/10/2022",
       "comments": [],
-      "likes": 0
+      "likes": 1
     },
     {
       "id": 7,
@@ -100,6 +100,12 @@
       "date": "1/12/2022",
       "comments": [],
       "likes": 0
+    },
+    {
+      "image": "https://www.womansworld.com/gallery/animals/bunny-photos-172767",
+      "caption": "awwww",
+      "date": "9/14/2022",
+      "id": 11
     }
   ]
 }

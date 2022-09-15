@@ -21,7 +21,7 @@ function App() {
   const [signUpForm, setSignUpForm] = useState(false)
 
   useEffect(() => {
-    fetch('http://localhost:3000/posts')
+    fetch('http://localhost:3005/posts')
       .then(r => r.json())
       .then(data => setPostList(data))
   }, []
@@ -31,9 +31,9 @@ function App() {
     setUser(user)
   }
 
-  
 
-  if (!user) return <Login signUpForm={signUpForm} setSignUpForm={setSignUpForm} handleLogin={handleLogin}/>
+
+  if (!user) return <Login signUpForm={signUpForm} setSignUpForm={setSignUpForm} handleLogin={handleLogin} />
 
   const newPost = (newPost) => {
     setPostList(postList => [...postList, newPost])
@@ -47,8 +47,8 @@ function App() {
   }
 
   function handleNewComment(updatedComment) {
-    const updateComment = postList.map((post) => 
-    post.id === updatedComment.id ? updatedComment : post);
+    const updateComment = postList.map((post) =>
+      post.id === updatedComment.id ? updatedComment : post);
     setPostList(updateComment)
   }
 
@@ -60,14 +60,14 @@ function App() {
 
   return (
     <div className='entire-page'>
-      <Header setUser={setUser}/>
+      <Header setUser={setUser} />
       <Profile />
       <Routes>
         <Route path='/' element={<MainContent postList={postList} handleNewComment={handleNewComment} handleUpdateLike={handleUpdateLike} />}>
         </Route>
         <Route path='/AddPostForm' element={<AddPostForm newPost={newPost} />}>
         </Route>
-        <Route path='/MostLiked' element={<MostLiked setPostList={setPostList} mostPopularPost={mostPopularPost} postList={postList}/>}></Route>
+        <Route path='/MostLiked' element={<MostLiked setPostList={setPostList} mostPopularPost={mostPopularPost} postList={postList} />}></Route>
       </Routes>
     </div>
   );
