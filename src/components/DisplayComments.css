@@ -2,6 +2,8 @@
     text-align: left;
     max-width: 600px;
     text-align: left;
-    border: #6e1758;
-    border-style: solid;
+    border: #ffffff;
+    border-style: outset;
+    background-color: #ddf0fc;
+    border-radius: 7px;
 }

@@ -6,7 +6,7 @@
     border: #282c34;
     border-style: solid;
     margin: auto;
-    background-color: antiquewhite;
+    background-color: #ddf0fc;
 }
 
 .button {
@@ -23,7 +23,3 @@
     cursor: pointer;
 }
 
-.button3:hover {
-    background-color: #f44336;
-    color: rgb(0, 107, 128);
-}

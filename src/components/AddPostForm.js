@@ -26,7 +26,6 @@ function AddPostForm({ newPost }) {
     return (
 
         <div>
-            <p className="new-post-title">New Post Form</p>
             <form className="new-post-div" onSubmit={formHandler}>
                 <div className="new-post__controls">
                     <div className="new-post__control">

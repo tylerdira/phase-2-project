@@ -17,7 +17,7 @@ function Comments({ updateComment }) {
                 <div className="new-comment__controls">
                     <div className="new-comment__control">
                         <input placeholder="Add a new comment" onChange={e => setComment(e.target.value)} value={comment}></input>
-                        <button type='submit'>Add Comment</button>
+                        <button className="add-comment-btn" type='submit'>Add Comment</button>
                     </div>
                 </div>
             </form>

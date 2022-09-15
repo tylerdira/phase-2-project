@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import './Post.css';
 import Comments from "./Comments";
 import DisplayComments from "./DisplayComments";
+import { AiOutlineEyeInvisible, AiOutlineEye } from 'react-icons/ai';
 
 function Posts({ post, handleUpdateLike, handleNewComment }) {
 
     const [toggle, setToggle] = useState(false);
+    const [heartToggle, setHeartToggle] = useState(true)
     const { id, image, likes, caption, date, comments } = post
 
 
@@ -44,6 +46,10 @@ function Posts({ post, handleUpdateLike, handleNewComment }) {
         setToggle(!toggle)
     }
 
+    const handleOver = () => {
+        setHeartToggle(!heartToggle)
+    }
+
     const toBeDisplayedComments = comments.map(comment => <DisplayComments key={Math.random()} comment={comment} />)
 
     return (
@@ -52,20 +58,20 @@ function Posts({ post, handleUpdateLike, handleNewComment }) {
             <img src={image}></img>
             <br />
             <p>Likes: {likes}</p>
-            <button className="button button3" onClick={increaseLikes}> ♡ </button>
+            <button className="button button3" onMouseOver={handleOver} onMouseLeave={handleOver} onClick={increaseLikes}> {heartToggle ? "♡" : '♥'} </button>
             <p>{caption}</p>
             <p>Posted: {date}</p>
             <div>
                 {
                     toggle ?
                         <div>
-                            <p>Comments: <button onClick={handleToggle}>Minimize</button></p>
+                            <p>Comments: <button onClick={handleToggle}><AiOutlineEyeInvisible className="view-minimize"/></button></p>
                             {toBeDisplayedComments}
                             <Comments updateComment={updateComment} />
                         </div>
                         :
                         <div>
-                            <p>Comments: <button onClick={handleToggle}>View</button></p>
+                            <p>Comments: <button onClick={handleToggle}><AiOutlineEye className="view-minimize"/></button></p>
                         </div>
                 }
             </div>
