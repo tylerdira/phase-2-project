@@ -13,7 +13,7 @@ function AddPostForm({ newPost }) {
             method: 'POST',
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
-                image, caption, date: new Date().toLocaleDateString()
+                image, caption, date: new Date().toLocaleDateString(), comments: []
             }),
         })
             .then(r => r.json())

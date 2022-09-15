@@ -52,7 +52,7 @@ function Posts({ post, handleUpdateLike, handleNewComment }) {
             <img src={image}></img>
             <br />
             <p>Likes: {likes}</p>
-            <button onClick={increaseLikes}> ♡ </button>
+            <button className="button button3" onClick={increaseLikes}> ♡ </button>
             <p>{caption}</p>
             <p>Posted: {date}</p>
             <div>

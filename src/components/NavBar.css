@@ -4,18 +4,32 @@
     align-items: flex-start;
     padding: 0.5rem;
     margin: 1rem 0;
-    background-color: #f4f3ed;
-    
+    background-color: #e9c346;
+
 }
 
 .home-link:hover {
-    background-color: antiquewhite;
+    color: #30afb5;
 }
+
+.home-link {
+    color: #c45508;
+}
+
 
 .new-post-link:hover {
-    background-color: antiquewhite;
+    color: #30afb5;
 }
 
+.new-post-link {
+    color: #c45508;
+}
+
+
 .most-liked-link:hover {
-    background-color: rgb(51, 141, 134);
+    color: #30afb5;
+}
+
+.most-liked-link {
+    color: #c45508;
 }
