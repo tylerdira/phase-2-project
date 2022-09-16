@@ -51,7 +51,7 @@ function Login({ handleLogin, setSignUpForm, signUpForm }) {
                             onChange={handleChange}></input>
                         <input
                             className="password"
-                            type='text'
+                            type='password'
                             placeholder="Password"
                             value={formData.password}
                             name='password'

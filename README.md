@@ -1,70 +1,43 @@
-# Getting Started with Create React App
+## Table of contents
+* [General Info](#general-info)
+* [Technologies](#technologies)
+* [Setup](#setup)
+* [Project Functionalities](#project-functionalities)
+* [Important/Major Components](#importantmajor-components)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## General Info
+This project showcases a mini social media platform that mimics common functionalities seen in social media platforms found today.
 
-## Available Scripts
+## Technologies 
+ * This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+ * This project utilizes the json-server-auth package. To install this package please refrence the 'Setup' section below. 
+ * This project also uses json server.
+ * **Note: A majority of the css in this application was found online and implemented by the developers.**
 
-In the project directory, you can run:
+## Setup
+To run this project, install json server and the auth package on your machine by running: 
+```
+$ npm install -D json-server json-server-auth
+```
+Once installed run:
+```
+$ npm run server
+```
+Then open a new terminal and run:
+```
+$ npm start
+```
+To run the script command and start our json server. 
 
-### `npm start`
+## Project Functionalities 
+Upon opening this project you will be taken to the login/signup screen. Here you will have the opportunity to create an account through the sign up form. 
+After signing up, login with your credentials and you will be taken to the 'Home' screen of the application. 
+On the 'Home' page of this application you can see all the posts that have been made. Additionally you can like and comment on any of them. 
+Additionally, you can sort through the list of posts by caption or date in the designated search bar. 
+At the top of the application you will see the Navbar that will take you to other pages.
+On the 'New Post' page you can create a new post by adding the images' link address and your caption.
+The 'Top 5 Liked Posts' page shows... well obviously the 5 posts that have the most likes...
+The 'Logout' button will log you out of the application and send you back to the login/signup page. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Important/Major Components
+In order to successfully login, you must enter credentials that have been put through the sign up form previously. 

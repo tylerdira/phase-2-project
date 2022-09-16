@@ -14,11 +14,6 @@
       "email": "lantz@mail.com",
       "password": "$2a$10$BWECI4X9Rj3.Y.YzWqiM7uVPXOooG.x3RHuaYEN1UHVkfo1hHb3Bq",
       "id": 3
-    },
-    {
-      "email": "eric@mail.com",
-      "password": "$2a$10$lWQNyDg8Z5Ad8u.3ye.mP.drHo1.LtBJ/on2t6WsPvGXUQsQFKV2G",
-      "id": 4
     }
   ],
   "posts": [
@@ -31,7 +26,8 @@
         "Beautiful",
         "Nice",
         "Cool!",
-        "super"
+        "super",
+        "Love the pic!"
       ],
       "likes": 65
     },
@@ -43,7 +39,7 @@
       "comments": [
         "bad duck"
       ],
-      "likes": 12
+      "likes": 18
     },
     {
       "id": 3,

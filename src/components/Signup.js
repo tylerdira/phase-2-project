@@ -52,7 +52,7 @@ function Signup() {
                 </input>
                 <input
                     className="password"
-                    type='text'
+                    type='password'
                     name='password'
                     value={signUpFormData.password}
                     placeholder='password'

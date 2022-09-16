@@ -9,7 +9,6 @@ import { Route, Routes } from 'react-router-dom';
 import '../App.css';
 import AddPostForm from './AddPostForm';
 import MainContent from './MainContent';
-import Profile from './Profile';
 import Header from './Header';
 import MostLiked from './MostLiked';
 import Login from './Login'
@@ -61,7 +60,6 @@ function App() {
   return (
     <div className='entire-page'>
       <Header setUser={setUser} />
-      <Profile />
       <Routes>
         <Route path='/' element={<MainContent postList={postList} handleNewComment={handleNewComment} handleUpdateLike={handleUpdateLike} />}>
         </Route>
